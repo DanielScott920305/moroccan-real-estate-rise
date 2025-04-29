@@ -277,13 +277,14 @@ const KYCForm = () => {
             <div className="space-y-2">
               <Label htmlFor="employmentStatus">Employment Status</Label>
               <Select 
-                value={formData.employmentStatus} 
+                value={formData.employmentStatus || "select"} 
                 onValueChange={(value) => handleSelectChange("employmentStatus", value)}
               >
                 <SelectTrigger>
                   <SelectValue placeholder="Select Employment Status" />
                 </SelectTrigger>
                 <SelectContent>
+                  <SelectItem value="select" disabled>Select Employment Status</SelectItem>
                   <SelectItem value="employed">Employed</SelectItem>
                   <SelectItem value="self_employed">Self-Employed</SelectItem>
                   <SelectItem value="business_owner">Business Owner</SelectItem>
@@ -308,13 +309,14 @@ const KYCForm = () => {
             <div className="space-y-2">
               <Label htmlFor="annualIncome">Annual Income (MAD)</Label>
               <Select 
-                value={formData.annualIncome} 
+                value={formData.annualIncome || "select"} 
                 onValueChange={(value) => handleSelectChange("annualIncome", value)}
               >
                 <SelectTrigger>
                   <SelectValue placeholder="Select Annual Income Range" />
                 </SelectTrigger>
                 <SelectContent>
+                  <SelectItem value="select" disabled>Select Annual Income Range</SelectItem>
                   <SelectItem value="under_100k">Under 100,000</SelectItem>
                   <SelectItem value="100k_300k">100,000 - 300,000</SelectItem>
                   <SelectItem value="300k_500k">300,000 - 500,000</SelectItem>
@@ -327,13 +329,14 @@ const KYCForm = () => {
             <div className="space-y-2">
               <Label htmlFor="sourceOfFunds">Source of Funds</Label>
               <Select 
-                value={formData.sourceOfFunds} 
+                value={formData.sourceOfFunds || "select"} 
                 onValueChange={(value) => handleSelectChange("sourceOfFunds", value)}
               >
                 <SelectTrigger>
                   <SelectValue placeholder="Select Source of Funds" />
                 </SelectTrigger>
                 <SelectContent>
+                  <SelectItem value="select" disabled>Select Source of Funds</SelectItem>
                   <SelectItem value="salary">Salary/Employment</SelectItem>
                   <SelectItem value="business">Business Income</SelectItem>
                   <SelectItem value="investments">Investment Returns</SelectItem>
@@ -347,13 +350,14 @@ const KYCForm = () => {
             <div className="space-y-2">
               <Label htmlFor="investmentGoals">Investment Goals</Label>
               <Select 
-                value={formData.investmentGoals} 
+                value={formData.investmentGoals || "select"} 
                 onValueChange={(value) => handleSelectChange("investmentGoals", value)}
               >
                 <SelectTrigger>
                   <SelectValue placeholder="Select Investment Goals" />
                 </SelectTrigger>
                 <SelectContent>
+                  <SelectItem value="select" disabled>Select Investment Goals</SelectItem>
                   <SelectItem value="capital_growth">Capital Growth</SelectItem>
                   <SelectItem value="regular_income">Regular Income</SelectItem>
                   <SelectItem value="portfolio_diversification">Portfolio Diversification</SelectItem>
@@ -366,13 +370,14 @@ const KYCForm = () => {
             <div className="space-y-2">
               <Label htmlFor="investmentExperience">Investment Experience</Label>
               <Select 
-                value={formData.investmentExperience} 
+                value={formData.investmentExperience || "select"} 
                 onValueChange={(value) => handleSelectChange("investmentExperience", value)}
               >
                 <SelectTrigger>
                   <SelectValue placeholder="Select Experience Level" />
                 </SelectTrigger>
                 <SelectContent>
+                  <SelectItem value="select" disabled>Select Experience Level</SelectItem>
                   <SelectItem value="none">None</SelectItem>
                   <SelectItem value="limited">Limited (1-2 years)</SelectItem>
                   <SelectItem value="moderate">Moderate (3-5 years)</SelectItem>

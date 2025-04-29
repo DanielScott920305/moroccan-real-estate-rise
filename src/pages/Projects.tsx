@@ -91,8 +91,8 @@ const allProjects = [
 
 const Projects = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [locationType, setLocationType] = useState("");
-  const [propertyType, setPropertyType] = useState("");
+  const [locationType, setLocationType] = useState("all");
+  const [propertyType, setPropertyType] = useState("all");
   const [minInvestment, setMinInvestment] = useState([0]);
   const [filteredProjects, setFilteredProjects] = useState(allProjects);
 
@@ -114,13 +114,13 @@ const Projects = () => {
       );
     }
     
-    // Filter by location
-    if (locationType) {
+    // Filter by location (changed from "" to "all")
+    if (locationType && locationType !== "all") {
       results = results.filter(project => project.location === locationType);
     }
     
-    // Filter by property type
-    if (propertyType) {
+    // Filter by property type (changed from "" to "all")
+    if (propertyType && propertyType !== "all") {
       results = results.filter(project => project.type === propertyType);
     }
     
@@ -139,8 +139,8 @@ const Projects = () => {
   // Reset all filters
   const resetFilters = () => {
     setSearchTerm("");
-    setLocationType("");
-    setPropertyType("");
+    setLocationType("all");
+    setPropertyType("all");
     setMinInvestment([0]);
   };
 
@@ -185,7 +185,7 @@ const Projects = () => {
                   <SelectValue placeholder="All Locations" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="">All Locations</SelectItem>
+                  <SelectItem value="all">All Locations</SelectItem>
                   <SelectItem value="Casablanca">Casablanca</SelectItem>
                   <SelectItem value="Marrakech">Marrakech</SelectItem>
                   <SelectItem value="Tangier">Tangier</SelectItem>
@@ -206,7 +206,7 @@ const Projects = () => {
                   <SelectValue placeholder="All Types" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="">All Types</SelectItem>
+                  <SelectItem value="all">All Types</SelectItem>
                   <SelectItem value="Residential">Residential</SelectItem>
                   <SelectItem value="Commercial">Commercial</SelectItem>
                   <SelectItem value="Mixed-Use">Mixed-Use</SelectItem>
