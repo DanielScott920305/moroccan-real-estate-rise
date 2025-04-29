@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,15 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Moroccan-inspired color palette
+				morocco: {
+					blue: '#1A365D',
+					lightBlue: '#2C5282',
+					terracotta: '#C05621',
+					gold: '#D69E2E',
+					sand: '#F6E05E',
+					neutral: '#F7FAFC'
 				}
 			},
 			borderRadius: {
